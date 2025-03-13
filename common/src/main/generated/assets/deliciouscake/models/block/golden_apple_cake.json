@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cake",
+  "textures": {
+    "bottom": "minecraft:block/cake_bottom",
+    "particle": "deliciouscake:block/golden_apple_cake_inner",
+    "side": "deliciouscake:block/golden_apple_cake_side",
+    "top": "deliciouscake:block/golden_apple_cake_top"
+  }
+}

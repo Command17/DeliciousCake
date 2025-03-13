@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "minecraft:milk_bucket"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "minecraft:gold_nugget"
+    },
+    "Y": {
+      "item": "minecraft:golden_apple"
+    },
+    "Z": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "XYZ",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "deliciouscake:golden_apple_cake"
+  }
+}

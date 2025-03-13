@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "minecraft:milk_bucket"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "minecraft:sugar"
+    },
+    "Y": {
+      "item": "minecraft:sugar"
+    },
+    "Z": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "XYZ",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "deliciouscake:glazed_cake"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "deliciouscake",
+  "version": "${version}",
+  "name": "Delicious Cake",
+  "description": "Adds some delicious cakes!",
+  "authors": [
+    "Command17"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/project/delicious-cake",
+    "issues": "https://github.com/Command17/Delicious/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/deliciouscake/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.github.command17.deliciouscake.fabric.data.DeliciousCakeDataGeneration"
+    ],
+    "main": [
+      "com.github.command17.deliciouscake.fabric.DeliciousCakeFabric"
+    ],
+    "client": [
+      "com.github.command17.deliciouscake.fabric.client.DeliciousCakeFabricClient"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "architectury": ">=13.0.8",
+    "forgeconfigapiport": ">=21.1.3"
+  },
+  "suggests": {
+    "another-mod": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.source": "https://github.com/Command17/DeliciousCake"
+      }
+    }
+  }
+}

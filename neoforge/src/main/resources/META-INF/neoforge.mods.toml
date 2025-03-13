@@ -1,0 +1,38 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+issueTrackerURL = "https://github.com/Command17/Delicious/issues"
+license = "MIT"
+
+[[mods]]
+modId = "deliciouscake"
+version = "${version}"
+displayName = "Delicious Cake"
+authors = "Command17"
+description = '''
+Adds some delicious cakes!
+'''
+logoFile = "assets/deliciouscake/icon.png"
+
+[[dependencies.deliciouscake]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.deliciouscake]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.deliciouscake]]
+modId = "architectury"
+type = "required"
+versionRange = "[13.0.8,)"
+ordering = "NONE"
+side = "BOTH"
+
+
+#[[mixins]]
