@@ -1,5 +1,6 @@
 plugins {
     id 'com.github.johnrengelman.shadow'
+    id 'me.modmuss50.mod-publish-plugin'
 }
 
 architectury {
@@ -71,4 +72,52 @@ shadowJar {
 
 remapJar {
     input.set shadowJar.archiveFile
+}
+
+var changelogText = rootProject.file("Changelog.md").text
+
+publishMods {
+    file = remapJar.archiveFile
+    modLoaders.add("neoforge")
+    displayName = "Delicious Cake v${project.version}"
+    changelog = changelogText
+
+    if (project.release_type == "alpha") {
+        type = ALPHA
+    } else if (project.release_type == "beta") {
+        type = BETA
+    } else if (project.release_type == "stable") {
+        type = STABLE
+    }
+
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        projectId = "xjtAXAaM"
+        supported_minecraft_versions.split(",").each { v -> minecraftVersions.add(v)}
+
+        // Architectury
+        requires {
+            id = "lhGA9TYQ"
+        }
+    }
+
+    curseforge {
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+        clientRequired = true
+        serverRequired = true
+        javaVersions.add(JavaVersion.VERSION_21)
+        projectId = "1220341"
+        supported_minecraft_versions.split(",").each { v -> minecraftVersions.add(v)}
+
+        // Architectury
+        requires("architectury-api")
+
+        // Configured
+        optional("configured")
+    }
+
+    github {
+        accessToken = providers.environmentVariable("GITHUB_TOKEN")
+        parent project(":").tasks.named("publishGithub")
+    }
 }
