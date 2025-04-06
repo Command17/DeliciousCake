@@ -15,16 +15,16 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        getOrCreateTagBuilder(ModTags.ItemTags.FOODS)
+        getOrCreateTagBuilder(ModTags.ItemTags.CAKE)
                 .add(ModItems.GLAZED_CAKE.get())
                 .add(ModItems.GOLDEN_APPLE_CAKE.get())
                 .add(ModItems.COOKIE_CAKE.get())
                 .add(ModItems.NETHER_CAKE.get());
 
+        getOrCreateTagBuilder(ModTags.ItemTags.FOODS)
+                .forceAddTag(ModTags.ItemTags.CAKE);
+
         getOrCreateTagBuilder(ModTags.ItemTags.FOODS_EDIBLE_WHEN_PLACES)
-                .add(ModItems.GLAZED_CAKE.get())
-                .add(ModItems.GOLDEN_APPLE_CAKE.get())
-                .add(ModItems.COOKIE_CAKE.get())
-                .add(ModItems.NETHER_CAKE.get());
+                .forceAddTag(ModTags.ItemTags.CAKE);
     }
 }

@@ -13,6 +13,7 @@ public final class ModTags {
     public static class ItemTags {
         private ItemTags() {}
 
+        public static final TagKey<Item> CAKE = tag("cake");
         public static final TagKey<Item> FOODS = conventionTag("foods");
         public static final TagKey<Item> FOODS_EDIBLE_WHEN_PLACES = conventionTag("foods/edible_when_placed");
 
@@ -27,6 +28,8 @@ public final class ModTags {
 
     public static class BlockTags {
         private BlockTags() {}
+
+        public static final TagKey<Block> CAKE = tag("cake");
 
         private static TagKey<Block> tag(String name) {
             return TagKey.create(Registries.BLOCK, DeliciousCake.resource(name));
