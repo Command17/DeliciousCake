@@ -35,7 +35,7 @@ A cake glazed with a sugary paste that looks like a creeper face.
 
 <img src="assets/golden_apple_cake.png" alt="golden_apple_cake" height="150"/>
 
-A golden cake made out of gold nuggets and a golden apple, it will make you resistant and regenerate health.
+A golden cake made out of gold nuggets and a golden apple. It will make you resistant and regenerate health.
 
 **Cookie Cake**
 
@@ -47,7 +47,7 @@ A cake made out of cookies. Very crunchy, but may not be the best food source...
 
 <img src="assets/nether_cake.png" alt="nether_cake" height="150"/>
 
-A cake made out of nether warts, it makes you resistant to fire.
+A cake made out of nether warts. It makes you resistant to fire.
 
 ### Recipes 🔨
 
