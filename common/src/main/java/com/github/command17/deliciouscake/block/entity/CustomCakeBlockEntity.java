@@ -57,7 +57,7 @@ public class CustomCakeBlockEntity extends BlockEntity {
 
     // Helper method for setting the lit block state
     public void setLit(boolean lit) {
-        this.level.setBlock(this.getBlockPos(), this.getLitState(lit, this.getBlockState()), 3);
+        this.level.setBlock(this.getBlockPos(), this.getLitState(lit, this.getBlockState()), Block.UPDATE_ALL);
     }
 
     @Override

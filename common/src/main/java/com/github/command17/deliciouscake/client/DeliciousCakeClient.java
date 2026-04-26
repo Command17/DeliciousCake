@@ -14,7 +14,6 @@ import static com.github.command17.deliciouscake.DeliciousCake.LOGGER;
 public final class DeliciousCakeClient {
     public static void init() {
         LOGGER.info("Initializing Client...");
-
         if (Platform.isFabric()) {
             registerRenderers();
         } else {

@@ -97,7 +97,6 @@ public class CustomCakeBlock extends BaseEntityBlock {
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         Item item = stack.getItem();
-
         if (level.getBlockEntity(pos) instanceof CustomCakeBlockEntity blockEntity) {
             // Candle Lighting
             if (blockEntity.hasCandle()) {
@@ -127,7 +126,6 @@ public class CustomCakeBlock extends BaseEntityBlock {
             // Candle Placing
             if (stack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && !blockEntity.hasCandle()) {
                 Block block = Block.byItem(item);
-
                 if (block instanceof CandleBlock candleBlock) {
                     stack.consume(1, player);
                     level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1, 1);
@@ -146,7 +144,7 @@ public class CustomCakeBlock extends BaseEntityBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (level.isClientSide) {
-            if (eat(level, pos, state, player).consumesAction()) {
+            if (this.eat(level, pos, state, player).consumesAction()) {
                 return InteractionResult.SUCCESS;
             }
 
@@ -162,9 +160,12 @@ public class CustomCakeBlock extends BaseEntityBlock {
         if (!player.canEat(false)) {
             return InteractionResult.PASS;
         } else {
+            // Handle player eating
             player.awardStat(Stats.EAT_CAKE_SLICE);
             player.getFoodData().eat(this.getFoodLevelModifier(), this.getSaturationLevelModifier());
             level.gameEvent(player, GameEvent.EAT, pos);
+
+            // Handle bite decreasing
             int bites = state.getValue(BITES);
             if (bites < MAX_BITES) {
                 if (level.getBlockEntity(pos) instanceof CustomCakeBlockEntity blockEntity) {
@@ -179,6 +180,7 @@ public class CustomCakeBlock extends BaseEntityBlock {
                 level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
             }
 
+            // Call on eat and finish
             this.onEat(state, level, pos, player);
             return InteractionResult.SUCCESS;
         }
